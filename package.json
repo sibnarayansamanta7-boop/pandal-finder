@@ -1,0 +1,30 @@
+{
+  "name": "pandal-finder-west-bengal",
+  "version": "1.1.0",
+  "private": true,
+  "description": "Full-stack React app for discovering Durga Puja pandals in West Bengal, with nearby search, live location and a map.",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -k -n API,WEB -c blue,magenta \"npm run server:dev\" \"npm run client:dev\"",
+    "server:dev": "node --watch server/index.js",
+    "client:dev": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "start": "node server/index.js",
+    "check": "node --check server/index.js && node --check server/storage.js && node scripts/check-data.mjs"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "leaflet": "^1.9.4",
+    "leaflet.markercluster": "^1.5.3",
+    "lucide-react": "^0.468.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-leaflet": "^4.2.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "concurrently": "^9.1.2",
+    "vite": "^6.0.7"
+  }
+}
